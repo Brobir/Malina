@@ -1,0 +1,1938 @@
+$widthElem: 100%;
+$paddingElem: 0 16px;
+
+$secondaryText: #6B6B6B;
+$blackText: #1B1B1B;
+$successText: #6FAD40;
+$whiteText: #FFFFFF;
+$errorText: #D16388;
+
+$successBox: #6FAD40;
+$successSecondaryBox: #EFF8E8;
+$errorSecondaryBox: #FFEDF3;
+
+@mixin widthAndPadding(){
+  box-sizing: border-box;
+  width: $widthElem;
+  padding: $paddingElem;
+}
+
+
+
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  html, body{
+    height: 100%;
+  }
+  span{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+  }
+  label{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $blackText;
+    cursor: pointer;
+  }
+  a{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $blackText;
+  }
+  .h1{
+    font-family: Roboto;
+    font-weight: 900;
+    font-style: normal;
+    color: $blackText;
+  }
+  .h2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: $blackText;
+  }
+  .h3{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: $blackText;
+  }
+  .noScroll{
+    overflow: hidden;
+  }
+  .hidePassword{
+    display: block;
+  }
+  .showPassword{
+    display: none;
+  }
+  .showPassword, .hidePassword{
+    position: absolute;
+    right: 15px;
+    top: 16px;
+  }
+  .logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img{
+      margin-right: 15px;
+    }
+
+    .h1{
+      text-transform: uppercase;
+      font-size: 23px;
+    }
+  }
+
+  .page-header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .page-icon{
+      height: 17px;
+      width: auto;
+      margin-right: 24px;
+
+      svg{
+        height: 100%;
+        width: auto;
+        transform: rotate(180deg);
+        fill: $successText;
+      }
+    }
+    .page-title{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      color: $blackText;
+    }
+  }
+
+  .main{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    position: relative;
+    min-height: 100%;
+
+    header{
+      position: fixed;
+      top: 0;
+      z-index: 99;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background-color: #FFFFFF;
+
+      box-sizing: border-box;
+      width: 100%;
+      padding: 23px 16px;
+      height: 71px;
+
+      .menu{
+        align-items: center;
+        width: 28px;
+        height: 28px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .balanceBox{
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0 16px;
+      height: 106px;
+      position: fixed;
+      z-index: 99;
+      top: 71px;
+      background-color: #FFFFFF;
+
+      .balance{
+        background-image: url(../img/balanceBack.png);
+        background-color: #FCFAFA;
+        background-size: cover;
+        background-position: center;
+        border-radius: 8px;
+
+        display: flex;
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+
+        padding: 20px;
+        height: 100%;
+
+        .balanceTitle{
+          font-size: 16px;
+          line-height: 20px;
+          color: $secondaryText
+        }
+        .balanceMoney{
+          margin-right: 100%;
+
+          font-size: 30px;
+          line-height: 35px;
+          color: $blackText;
+        }
+        .balanceButton{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 124px;
+          height: 28px;
+          background: $successBox;
+          border-radius: 6px;
+
+          a{
+            font-size: 12px;
+            line-height: 104%;
+            color: $whiteText;
+          }
+        }
+      }
+    }
+
+    .sliderBox{
+      @include widthAndPadding();
+      overflow: hidden;
+      height: 68px;
+      margin-top: 197px;
+      margin-bottom: 24px;
+
+      .slider{
+        .slick-track{
+          display: flex;
+        }
+        .sliderItem{
+          border: 1px solid #EDEDED;
+          box-sizing: border-box;
+          border-radius: 8px;
+
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+
+          padding: 8px 16px;
+          margin-right: 8px;
+          width: 216px;
+          height: 68px;
+
+          .sliderItemTitle{
+            font-size: 12px;
+            line-height: 20px;
+            color: $secondaryText;
+          }
+          .sliderItemMoney{
+            display: block;
+            width: 100%;
+
+            font-size: 24px;
+            line-height: 28px;
+            color: $blackText;
+          }
+          .sliderItemDate{
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            width: auto;
+            padding: 0 6px;
+            height: 16px;
+            margin-top: 2px;
+            background: $successSecondaryBox;
+            border-radius: 2px;
+
+            span{
+              font-size: 11px;
+              line-height: 20px;
+              color: $successText;
+            }
+          }
+          .sliderItemIcon{
+            display: block;
+          }
+        }
+        .sliderItem:last-of-type{
+          margin-right: 0;
+        }
+      }
+    }
+
+    .stoncsBox{
+      @include widthAndPadding();
+
+      .stoncsTitle{
+        display: block;
+        margin-bottom: 16px;
+      }
+
+      .stoncsItems{
+        display: flex;
+        flex-direction: column;
+
+        .stoncsItem{
+          border: 1px solid #EDEDED;
+          box-sizing: border-box;
+          border-radius: 8px;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-content: flex-start;
+          align-items: flex-start;
+          box-sizing: border-box;
+
+          margin-bottom: 12px;
+          padding: 16px;
+          width: 100%;
+          height: 146px;
+
+          .stoncsItemTitle{
+            display: block;
+            overflow: hidden;
+
+            width: 100%;
+            height: 42px;
+          }
+          .stoncsItemDesc{
+            display: block;
+            overflow: hidden;
+
+            width: 100%;
+            height: 32px;
+
+            font-size: 14px;
+            line-height: 16px;
+            color: $secondaryText;
+          }
+          .stoncsItemData{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: auto;
+            padding: 0 6px;
+            height: 19px;
+            background: $errorSecondaryBox;
+            border-radius: 2px;
+
+            span{
+              font-size: 12px;
+              line-height: 14px;
+              color: $errorText;
+            }
+          }
+        }
+
+        .stoncsItem:last-of-type{
+          margin-bottom: 90px;
+        }
+      }
+    }
+
+    .promoСodeBox{
+      position: fixed;
+      bottom: 0;
+      z-index: 99;
+      background: #FFFFFF;
+      box-shadow: 0px -5px 17px rgba(133, 140, 146, 0.25);
+      display: flex;
+
+      padding: 18px 16px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 86px;
+
+      .promoСodeInput{
+        background: #FFFFFF;
+        border: 1px solid #D8D8D8;
+        border-radius: 10px;
+        box-sizing: border-box;
+
+        padding: 15px 20px;
+        margin-right: 10px;
+        width: 100%;
+        height: 50px;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 20px;
+        color: $blackText;
+      }
+
+      .promoСodeCamera{
+        background: $successBox;
+        border-radius: 10px;
+
+        min-width: 68px;
+        height: 50px;
+        border: 0;
+      }
+
+      @media (min-width: 640px){
+        .promoСodeCamera{
+          display: none;
+        }
+      }
+    }
+
+    .historyBox{
+      @include widthAndPadding();
+      margin-top: 71px;
+
+      .historyItem{
+        padding-top: 25px;
+        height: auto;
+        width: auto;
+
+        display: grid;
+        grid-gap: 12px;
+        grid-template-columns: 110px auto 61px;
+        grid-template-rows: 20px auto;
+
+        img{
+          border-radius: 4px;
+          width: 100%;
+          height: 100%;
+          grid-column: 1/2;
+          grid-row: 1/3;
+        }
+        .historyItemData{
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 14px;
+          color: $secondaryText;
+
+          grid-column: 2/3;
+          grid-row: 1/2;
+
+          .historyItemTitle{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: $blackText;
+            margin-right: 8px;
+          }
+        }
+        .historyItemMoney{
+          grid-column: 3/4;
+          grid-row: 1/2;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 3px 8px;
+          background-color: $errorSecondaryBox;
+          color: $errorText;
+          border-radius: 2px;
+
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 14px;
+          color: #D16388;
+        }
+        .historyItemDesc{
+          grid-column: 2/4;
+          grid-row: 2/3;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          overflow: hidden;
+
+          font-size: 14px;
+          line-height: 16px;
+          color: $secondaryText;
+
+          .historyLink{
+            width: 100%;
+            height: 14px;
+
+            font-size: 12px;
+            line-height: 14px;
+            text-decoration-line: underline;
+            color: #4BA4C2;
+
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    .searchCard{
+      @include widthAndPadding();
+      margin-top: 83px;
+      position: relative;
+
+      .searchCard-icon{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 10px;
+        left: 25px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+          fill: #8E9192;
+        }
+      }
+      input{
+        width: 100%;
+        border: none;
+        padding: 7px 7px 7px 36px;
+        background: #F7F7F7;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        color: $blackText;
+      }
+    }
+
+    .kategoryBox{
+      @include widthAndPadding();
+      margin-top: 20px;
+
+      .kategory-title{
+        font-size: 14px;
+        line-height: 22px;
+        color: $blackText;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        cursor: pointer;
+
+        svg{
+          width: 9px;
+          height: 9px;
+          transform: rotate(90deg);
+          fill: $blackText;
+          margin-left: 4px;
+        }
+      }
+      .kategory-items{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        a{
+          height: 28px;
+          min-width: 80px;
+          padding: 0 5px;
+          margin: 0 8px 8px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border-radius: 10px;
+          font-size: 14px;
+          line-height: 100%;
+          color: #A4ABAB;
+          border: 1px solid #A4ABAB;
+        }
+      }
+    }
+
+    .cardBox{
+      @include widthAndPadding();
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 11px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      .cardBox-title{
+        grid-column: 1/3;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .cardBox-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 12px;
+          height: 12px;
+          margin-left: 8px;
+        }
+      }
+
+      .cardItem{
+        border: 1px solid #D8D8D8;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+
+        img{
+          width: 100%;
+          height: auto;
+        }
+        .cardItemDesc{
+          padding: 12px 16px 20px;
+          width: 100%;
+          box-sizing: border-box;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          .cardItemTitle{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: $blackText;
+            margin-bottom: 4px;
+          }
+          .cardItemMoney{
+            font-size: 12px;
+            line-height: 14px;
+            color: #A4ABAB;
+          }
+        }
+      }
+    }
+
+    .actBonBox{
+      @include widthAndPadding();
+      margin-top: 83px;
+      margin-bottom: 25px;
+      height: 125px;
+
+      .actBon-layouts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background: #F7F7F7;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        padding: 20px 16px;
+        box-sizing: border-box;
+
+        .actBon-money{
+          display: block;
+          width: 100%;
+          font-size: 14px;
+          line-height: 16px;
+          color: $secondaryText;
+          margin-bottom: 19px;
+        }
+
+        .actBon-input{
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          input{
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: none;
+            font-size: 32px;
+            line-height: 20px;
+            color: $blackText;
+            height: 50px;
+            width: 40%;
+            padding: 0 14px;
+            margin-right: 8px;
+          }
+
+          a{
+            background: $successText;
+            border-radius: 10px;
+            height: 50px;
+            min-width: 50px;
+            border: none;
+            margin-right: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            .button-icon{
+              width: 25px;
+              height: 25px;
+
+              svg{
+                width: 100%;
+                height: 100%;
+                fill: $whiteText;
+              }
+            }
+          }
+
+          span{
+            display: block;
+            font-size: 12px;
+            line-height: 100%;
+            color: $blackText;
+            width: 88px;
+          }
+        }
+      }
+    }
+
+    .historySliderBox{
+      @include widthAndPadding();
+      overflow: hidden;
+      padding-bottom: 26px;
+      border-bottom: 1px solid #EDEDED;
+
+      .historySliderBox-title{
+        grid-column: 1/3;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 15px;
+
+        .historySliderBox-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 12px;
+          height: 12px;
+          margin-left: 8px;
+        }
+      }
+
+      .historySlider-items{
+        height: 60px;
+
+        .slick-track{
+          display: flex;
+        }
+        .historySlider-item{
+          border-radius: 8px;
+
+          width: 100px;
+          height: 60px;
+          margin-right: 10px;
+
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .sliderItem:last-of-type{
+          margin-right: 0;
+        }
+      }
+    }
+
+    .form_actionBonus{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 71px 16px 40px;
+
+      .title{
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 24px;
+      }
+      form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+
+        .form-row{
+          width: 100%;
+          height: 44px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          > input{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #D8D8D8;
+            padding: 0 16px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 16px;
+            color: $blackText;
+          }
+          > span{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 8px;
+
+            input{
+              margin-right: 4px;
+              width: 20px;
+              height: 20px;
+              color: red;
+            }
+            label{
+              font-size: 14px;
+              color: #323232;
+            }
+          }
+        }
+        .form-file{
+          grid-column: 1/3;
+
+          input{
+            display: none;
+          }
+          label{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &:after{
+              content: "*";
+              color: red;
+              margin-left: 5px;
+              margin-bottom: 10px;
+            }
+
+            img{
+              margin-right: 12px;
+            }
+            span{
+              font-size: 14px;
+              line-height: 16px;
+              color: $successText;
+              width: 170px;
+            }
+          }
+        }
+
+        .form-rowFio{
+          grid-column: 1/3;
+        }
+        .form-rowDateDr{
+          grid-column: 1/2;
+        }
+        .form-rowDateGender{
+          grid-column: 2/3;
+        }
+        span{
+          grid-column: 1/2;
+          font-size: 16px;
+          line-height: 18px;
+          color: $blackText;
+          margin-top: 8px;
+          margin-bottom: 4px;
+        }
+        a{
+          grid-column: 2/3;
+          font-size: 14px;
+          line-height: 16px;
+          text-decoration-line: underline;
+          color: $successText;
+          text-align: right;
+          margin-top: 8px;
+          margin-bottom: 4px;
+          justify-self: end;
+        }
+        .form-rowDateSPas{
+          grid-column: 1/2;
+        }
+        .form-rowDateDrNPas{
+          grid-column: 2/3;
+        }
+        .form-rowDateDrAPas{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrDPas{
+          grid-column: 1/2;
+        }
+        .form-rowDateDrKodPod{
+          grid-column: 2/3;
+        }
+        .form-rowDateDrInn{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrInd{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrAdres{
+          grid-column: 1/3;
+        }
+        button{
+          grid-column: 1/3;
+          width: 100%;
+          height: 44px;
+          margin-top: 12px;
+          background: $successBox;
+          border-radius: 8px;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: $whiteText;
+          border: 0;
+        }
+        button[disabled]{
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .author-layouts{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      padding: 0 16px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      margin-top: 71px;
+      margin-bottom: 20px;
+
+      .titleBox{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 7px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #D8D8D8;
+        box-sizing: border-box;
+
+        span.log-inTitle{
+          margin-right: 20px;
+        }
+        span{
+          font-size: 20px;
+          line-height: 23px;
+          color: #A4ABAB;
+          height: 100%;
+          margin-bottom: -7px;
+          padding-bottom: 7px;
+        }
+        span.active{
+          color: $blackText;
+          border-bottom: 2px solid $successText;
+          box-sizing: border-box;
+        }
+      }
+      .form-layouts{
+        form.log-in{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .form-row{
+            margin-bottom: 16px;
+            width: 100%;
+
+            input{
+              width: 100%;
+              height: 44px;
+              font-size: 14px;
+              line-height: 16px;
+              color: $blackText;
+              border: 1px solid #D8D8D8;
+              box-sizing: border-box;
+              border-radius: 10px;
+              padding: 0 16px;
+            }
+          }
+          > span{
+            font-size: 14px;
+            line-height: 16px;
+            text-align: left;
+            color: #A4ABAB;
+            margin-top: 4px;
+            margin-bottom: 28px;
+          }
+          button{
+            width: 100%;
+            height: 44px;
+            background: $successBox;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: $whiteText;
+            border: 0;
+          }
+          button[disabled]{
+            opacity: 0.5;
+          }
+        }
+        form.sign-in{
+          display: none;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-between;
+          align-items: center;
+          grid-gap: 16px;
+
+          .form-row{
+            grid-column: 1/3;
+            width: 100%;
+            position: relative;
+
+            input{
+              width: 100%;
+              height: 44px;
+              font-size: 14px;
+              line-height: 16px;
+              color: $blackText;
+              border: 1px solid #D8D8D8;
+              box-sizing: border-box;
+              border-radius: 10px;
+              padding: 0 16px;
+            }
+          }
+          .form-fio{
+            grid-column: 1/2;
+          }
+          .form-dol{
+            grid-column: 2/3;
+          }
+          > span{
+            grid-column: 1/3;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            color: #A4ABAB;
+
+            a{
+              font-size: 14px;
+              line-height: 16px;
+              text-decoration: underline;
+              color: $successText;
+            }
+          }
+          button{
+            grid-column: 1/3;
+            width: 100%;
+            height: 44px;
+            background: $successBox;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: $whiteText;
+            border: 0;
+          }
+          button[disabled]{
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .userDataBox{
+      @include widthAndPadding();
+      margin-top: 86px;
+
+      .userData{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 0 24px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #DADADA;
+        box-sizing: border-box;
+
+        &:last-of-type{
+          padding-bottom: 0;
+          margin-bottom: 0;
+          border-bottom: 0;
+        }
+
+        .title{
+          width: 100%;
+          font-size: 18px;
+          line-height: 21px;
+          color: $blackText;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 12px;
+
+          > a{
+            font-size: 14px;
+            line-height: 16px;
+            text-decoration-line: underline;
+            color: $blackText;
+          }
+        }
+        .formUserData{
+          width: 100%;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 12px;
+          margin-bottom: 20px;
+
+          input{
+            border: 1px solid #D8D8D8;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 15px;
+            color: $blackText;
+            height: 44px;
+
+            &:last-of-type{
+              grid-column: 1/3;
+            }
+          }
+        }
+        .desc{
+          font-size: 16px;
+          line-height: 17px;
+          color: $blackText;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          img{
+            margin-right: 8px;
+          }
+          .arrow{
+            margin: 0;
+            margin-left: 6px;
+          }
+        }
+        .status{
+          margin-left: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #refreshPasswordJs{
+          cursor: pointer;
+        }
+        .button{
+          height: 40px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration-line: none;
+          background: $successBox;
+          border-radius: 8px;
+          font-size: 16px;
+          line-height: 19px;
+          color: $whiteText;
+          border: 0;
+          margin-top: 20px;
+        }
+        > a{
+          font-size: 15px;
+          line-height: 16px;
+          text-decoration-line: underline;
+          color: $successText;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  .authorPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-image: url(../img/bgAuthor.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    header{
+      background-color: transparent;
+      position: absolute;
+    }
+  }
+  .actBonPage{
+    .historySliderBox{
+      margin-top: 83px;
+    }
+    .searchCard{
+      margin-top: 20px;
+    }
+    #kategory-itemsJs{
+      display: flex !important;
+    }
+  }
+  .menu_popup-layouts{
+    justify-content: flex-start;
+    align-items: stretch;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    .menu_popup{
+      width: 80%;
+      height: 100%;
+      background-color: #fff;
+
+      .logo{
+        width: 100%;
+        padding: 23px 16px 30px;
+        height: 71px;
+        box-sizing: border-box;
+      }
+      .menu_nav{
+        margin-left: 30px;
+
+        ul{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          list-style-type: none;
+
+          li{
+            margin: 15px 0;
+
+            a{
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              .menu_nav-icon{
+                width: 21px;
+                height: 21px;
+                margin-right: 16px;
+
+                svg{
+                  width: 100%;
+                  height: 100%;
+                  fill: $blackText;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .menu_popup-close{
+        position: absolute;
+        top: 26px;
+        right: 18px;
+        width: 19px;
+        height: 19px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+          fill: #fff;
+        }
+      }
+    }
+
+    .menu_popup-back{
+      width: 20%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .card_popup-layouts{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    .card_popup{
+      z-index: 101;
+      width: 90%;
+      height: auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+      .card_popup-desc{
+        margin: 22px 0 38px 16px;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .card_popup-title{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          color: $blackText;
+          margin-bottom: 6px;
+        }
+        .card_popup-money{
+          font-size: 12px;
+          line-height: 14px;
+          color: #A4ABAB;
+        }
+      }
+      button{
+        background: #6FAD40;
+        border-radius: 8px;
+        width: 117px;
+        height: 32px;
+        border: none;
+        font-size: 14px;
+        line-height: 16px;
+        color: $whiteText;
+        margin: 24px 16px 40px 0;
+        cursor: pointer;
+      }
+    }
+
+    .card_popup-back{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .formMoney_actionBonus{
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    overflow-y: scroll;
+
+    .formMoneyPopup{
+      z-index: 101;
+      position: relative;
+      width: 90%;
+      height: auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      padding: 24px 33px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .title{
+        font-size: 22px;
+        line-height: 26px;
+        color: $blackText;
+        margin-bottom: 8px;
+      }
+      .money{
+        font-size: 14px;
+        line-height: 16px;
+        color: $secondaryText;
+        margin-bottom: 24px;
+      }
+
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        .form-row{
+          width: 100%;
+
+          input{
+            width: 100%;
+          }
+        }
+        .form-money{
+          margin-bottom: 60px;
+
+          input{
+            height: 50px;
+            padding: 0 15px;
+            font-size: 32px;
+            line-height: 20px;
+            color: $blackText;
+            border: 1px solid #D8D8D8;
+            box-sizing: border-box;
+            border-radius: 10px;
+          }
+        }
+        .form-range{
+          margin-bottom: 30px;
+
+          .irs--flat{
+            .irs-min, .irs-max {
+              top: 40px;
+              font-size: 14px;
+              line-height: 16px;
+              color: $secondaryText;
+              background-color: transparent;
+            }
+            .irs-single {
+              font-size: 14px;
+              line-height: 16px;
+              color: $secondaryText;
+              background-color: transparent;
+              border: 1px solid #D8D8D8;
+              border-radius: 5px;
+              top: -15px;
+              padding: 5px 8px;
+            }
+            .irs-single:before {
+              border-top-color: transparent;
+            }
+            .irs-line {
+              top: 25px;
+              height: 4px;
+              background-color: #D8D8D8;
+            }
+            .irs-bar{
+              background-color: $successBox;
+              height: 4px;
+            }
+            .irs-handle{
+              top: 19px;
+              width: 16px;
+              height: 16px;
+              border-radius: 16px;
+              background-color: $successBox;
+            }
+            .irs-handle{
+              > i{
+                &:first-child{
+                  background-color: $successBox;
+                }
+              }
+            }
+          }
+        }
+
+        .form-rangeStep{
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .rangeStep{
+            width: 23%;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            padding: 10px;
+            background: $successBox;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            color: $whiteText;
+          }
+        }
+
+        button{
+          width: 100%;
+          height: 44px;
+          margin-top: 12px;
+          background: $successBox;
+          border-radius: 8px;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: $whiteText;
+          border: 0;
+        }
+        // button[disabled]{
+        //   opacity: 0.5;
+        // }
+      }
+      .formMoney-close{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 10px;
+        right: 10px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .formMoney-back{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .formPasport_actionBonus{
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    overflow: scroll;
+
+    .formPasportPopup{
+      position: relative;
+      z-index: 101;
+      width: 90%;
+      height: auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 20px;
+      margin: 20px 0;
+      box-sizing: border-box;
+
+      .title{
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 16px;
+
+        .form-row{
+          width: 100%;
+          height: 44px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          > input{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #D8D8D8;
+            padding: 0 16px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 16px;
+            color: $blackText;
+          }
+          > span{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 8px;
+
+            input{
+              margin-right: 4px;
+              width: 20px;
+              height: 20px;
+              color: red;
+            }
+            label{
+              font-size: 14px;
+              color: #323232;
+            }
+          }
+        }
+        .form-file{
+          grid-column: 1/3;
+
+          input{
+            display: none;
+          }
+          label{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            &:after{
+              content: "*";
+              color: red;
+              margin-left: 5px;
+              margin-bottom: 10px;
+            }
+
+            img{
+              margin-right: 12px;
+            }
+            span{
+              font-size: 14px;
+              line-height: 16px;
+              color: $successText;
+              width: 170px;
+            }
+          }
+        }
+
+        .form-rowFio{
+          grid-column: 1/3;
+        }
+        .form-rowDateDr{
+          grid-column: 1/2;
+        }
+        .form-rowDateGender{
+          grid-column: 2/3;
+        }
+        span{
+          grid-column: 1/2;
+          font-size: 16px;
+          line-height: 18px;
+          color: $blackText;
+          margin-top: 8px;
+          margin-bottom: 4px;
+        }
+        a{
+          grid-column: 2/3;
+          font-size: 14px;
+          line-height: 16px;
+          text-decoration-line: underline;
+          color: $successText;
+          text-align: right;
+          margin-top: 8px;
+          margin-bottom: 4px;
+          justify-self: end;
+        }
+        .form-rowDateSPas{
+          grid-column: 1/2;
+        }
+        .form-rowDateDrNPas{
+          grid-column: 2/3;
+        }
+        .form-rowDateDrAPas{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrDPas{
+          grid-column: 1/2;
+        }
+        .form-rowDateDrKodPod{
+          grid-column: 2/3;
+        }
+        .form-rowDateDrInn{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrInd{
+          grid-column: 1/3;
+        }
+        .form-rowDateDrAdres{
+          grid-column: 1/3;
+        }
+        button{
+          grid-column: 1/3;
+          width: 100%;
+          height: 44px;
+          margin-top: 12px;
+          background: $successBox;
+          border-radius: 8px;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: $whiteText;
+          border: 0;
+        }
+        // button[disabled]{
+        //   opacity: 0.5;
+        // }
+      }
+
+      .formPasport-close{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 10px;
+        right: 10px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .formPasport-back{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .successPopup-layouts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    overflow-y: scroll;
+
+    .successPopup{
+      z-index: 101;
+      position: relative;
+      width: 90%;
+      height: auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      padding: 24px 33px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .h2{
+        margin-bottom: 12px;
+      }
+      span{
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: $secondaryText;
+      }
+      img{
+        width: 210px;
+        margin-bottom: 24px;
+      }
+      .successPopup-close{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 10px;
+        right: 10px;
+
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .successPopup-back{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .refreshPassword-layouts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    overflow-y: scroll;
+
+    .refreshPassword_popup{
+      z-index: 101;
+      position: relative;
+      width: 90%;
+      height: auto;
+      background: #FFFFFF;
+      border-radius: 15px;
+      padding: 24px 33px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .h2{
+        margin-bottom: 20px;
+      }
+
+      form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .form-row{
+          width: 100%;
+          margin-bottom: 16px;
+          position: relative;
+
+          input{
+            width: 100%;
+            border: 1px solid #D8D8D8;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 15px;
+            color: $blackText;
+            height: 44px;
+          }
+          button{
+            height: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration-line: none;
+            background: $successBox;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 19px;
+            color: $whiteText;
+            border: 0;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .refreshPassword_popup-close{
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .refreshPassword-back{
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.5);
+    }
+  }
+  .popupShow{
+    display: flex;
+  }
+  .popupHide{
+    display: none;
+  }
+
+@media screen and (min-width: 768px){
+    .main{
+      width: 640px;
+      margin: 0 auto;
+
+      .balanceBox, .promoСodeBox, header{
+        width: 640px;
+      }
+    }
+    .menu_popup-layouts{
+      left: calc(50% - 320px);
+      height: auto;
+
+      .menu_popup {
+        position: relative;
+        width: 640px;
+        height: 71px;
+        display: flex;
+        justify-content: space-between;
+
+        .logo{
+          width: auto;
+          padding: 23px 16px;
+        }
+
+        .menu_nav{
+          margin: 0;
+          ul{
+            background-color: #FFF;
+            padding: 15px 15px 0;
+            border-radius: 8px;
+            border-bottom: 2px solid silver;
+            margin-right: 60px;
+          }
+        }
+
+        .menu_popup-close{
+          right: 20px;
+          svg{
+            fill: #000;
+          }
+        }
+      }
+      .menu_popup-back {
+        // width: 100%;
+        display: none;
+      }
+    }
+
+    .card_popup-layouts .card_popup,
+    .formMoney_actionBonus .formMoneyPopup,
+    .formPasport_actionBonus .formPasportPopup,
+    .successPopup-layouts .successPopup,
+    .refreshPassword-layouts .refreshPassword_popup,
+    {
+      width: 640px;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="../font/font.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="main authorPage">
+      <header>
+        <div class="logo">
+          <img src="../img/logo.png" alt="">
+          <a href="../index.html" class="h1">Malina</a>
+        </div>
+      </header>
+      <div class="author-layouts">
+        <div class="titleBox">
+          <span class="log-inTitle active">Вход</span>
+          <span class="sign-inTitle">Регистрация</span>
+        </div>
+        <div class="form-layouts">
+          <form class="log-in" action="" method="post">
+            <div class="form-row form-login">
+              <input required type="text" name="" value="" placeholder="E-mail или телефон">
+            </div>
+            <div class="form-row form-password">
+              <input required type="password" name="" value="" placeholder="Пароль">
+            </div>
+            <span>Забыли пароль?</span>
+            <button type="button" name="button">Войти</button>
+          </form>
+          <form class="sign-in" action="" method="post">
+            <div class="form-row form-fio">
+              <input required type="text" name="" value="" placeholder="Имя">
+            </div>
+            <div class="form-row form-dol">
+              <input required type="text" name="" value="" placeholder="Должность">
+            </div>
+            <div class="form-row form-kom">
+              <input required type="text" name="" value="" placeholder="Компания">
+            </div>
+            <div class="form-row form-inn">
+              <input required type="text" name="" value="" placeholder="ИНН Предприятия торговли">
+            </div>
+            <div class="form-row form-tel">
+              <input required type="text" name="" value="" placeholder="Номер телефона">
+            </div>
+            <div class="form-row form-email">
+              <input required type="email" name="" value="" placeholder="E-mail">
+            </div>
+            <div class="form-row form-pas">
+              <input required type="password" name="" value="" placeholder="Пароль">
+              <img class="showPassword" src="../img/showPas.svg" alt="">
+              <img class="hidePassword" src="../img/hidePass.svg" alt="">
+            </div>
+            <div class="form-row form-pasx2">
+              <input required type="password" name="" value="" placeholder="Повтор пароля">
+              <img class="showPassword" src="../img/showPas.svg" alt="">
+              <img class="hidePassword" src="../img/hidePass.svg" alt="">
+            </div>
+            <span>Нажимая кнопку “Зарегистрироваться”<br />я принимаю <a href="#">пользовательское соглашение</a></span>
+            <button type="button" name="button">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="../js/auth.js"></script>
+</html>
